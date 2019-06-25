@@ -1,0 +1,121 @@
+2019-05-23 19:36:19,638 ERROR: Exception on /register [POST] [in /home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py:806]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.about_me
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 1077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 840, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 779, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 838, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 829, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/routes.py", line 114, in register
+    if form.validate_on_submit():
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/wtforms/fields/core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/wtforms/fields/core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/forms.py", line 39, in validate_username
+    user = User.query.filter_by(username=username.data).first()
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 3215, in first
+    ret = list(self[0:1])
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 3007, in __getitem__
+    return list(res)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 3317, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/orm/query.py", line 3342, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.about_me
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('vlad22', 1, 0)]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-05-23 19:39:30,402 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:44:51,750 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:45:34,601 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:45:43,546 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:45:54,833 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:45:59,767 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 19:48:17,346 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:13:42,145 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:13:53,033 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:15:17,745 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:17:42,599 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:18:24,705 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-05-23 20:18:27,849 ERROR: Exception on /user/QWERTYMASTER [GET] [in /home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py:806]
+Traceback (most recent call last):
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 1077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 840, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 779, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 838, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 829, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/routes.py", line 136, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 11, in block "content"
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers'

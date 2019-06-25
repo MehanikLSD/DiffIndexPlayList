@@ -1,5 +1,80 @@
-2019-04-16 00:33:45,476 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList/FlaskApp/app/__init__.py:56]
-2019-04-16 00:33:46,048 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList/FlaskApp/app/__init__.py:56]
-2019-04-16 00:34:58,896 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList/FlaskApp/app/__init__.py:56]
-2019-04-16 00:51:33,262 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList/FlaskApp/app/__init__.py:56]
-2019-04-16 00:51:33,784 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList/FlaskApp/app/__init__.py:56]
+2019-05-23 20:18:32,881 ERROR: Exception on /user/QWERTYMASTER [GET] [in /home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py:806]
+Traceback (most recent call last):
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 1077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 840, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 779, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 838, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 829, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/routes.py", line 136, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 11, in block "content"
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers'
+2019-05-23 20:18:35,107 ERROR: Exception on /user/SvechnikovVA [GET] [in /home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py:806]
+Traceback (most recent call last):
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 1077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 840, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 779, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 838, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/app.py", line 829, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/routes.py", line 136, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/templates/user.html", line 11, in block "content"
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+  File "/home/vlad-vm/.local/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers'
+2019-05-23 20:18:46,344 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]
+2019-06-25 15:32:53,190 INFO: Microblog startup [in /home/vlad-vm/ProgectsPython/DiffIndexPlayList-master/FlaskApp/app/__init__.py:56]

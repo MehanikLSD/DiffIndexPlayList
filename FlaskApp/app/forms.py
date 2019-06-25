@@ -28,12 +28,12 @@ class LoginForm(FlaskForm):
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Логин', validators=[DataRequired()])
+    email = StringField('Почта', validators=[DataRequired(), Email()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
     password2 = PasswordField(
-        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Register')
+        'Не расслышал. Пароль.', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Записаться')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
@@ -47,7 +47,7 @@ class RegistrationForm(FlaskForm):
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
+    username = StringField('Юзернаме', validators=[DataRequired()])
     about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
     submit = SubmitField('Submit')
 
@@ -59,9 +59,9 @@ class EditProfileForm(FlaskForm):
         if username.data != self.original_username:
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
-                raise ValidationError('Please use a different username.')
+                raise ValidationError('Это не ты.')
 
 
 class PostForm(FlaskForm):
-    post = TextAreaField('Say something', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+    post = TextAreaField('Пиши туть', validators=[DataRequired()])
+    submit = SubmitField('Ну вещай!')
